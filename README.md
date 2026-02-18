@@ -67,7 +67,7 @@ People Attribute Tracker是一个强大的计算机视觉系统，专门用于�
 
 ```bash
 # 克隆项目
-git clone https://github.com/yourusername/people-attribute-tracker.git
+git clone https://github.com/Mmmtttt/people-attribute-tracker.git
 cd people-attribute-tracker
 
 # 安装依赖
