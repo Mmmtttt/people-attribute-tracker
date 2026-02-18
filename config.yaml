@@ -1,0 +1,120 @@
+# People Attribute Tracker 配置文件
+
+# 模型配置
+model:
+  # YOLOv8 检测模型路径
+  detection: yolov8n.pt
+  
+  # PP-Human 属性识别模型路径
+  attribute: models/PPLCNet_x1_0_person_attribute_945_infer
+  
+  # 检测置信度阈值 (0.0 - 1.0)
+  conf_threshold: 0.5
+
+# 跟踪配置
+tracking:
+  # DeepSORT 最大跟踪年龄（帧数）
+  max_age: 30
+  
+  # DeepSORT 初始化帧数
+  n_init: 3
+  
+  # 跟踪超时时间（秒）
+  timeout: 30
+
+# 输出配置
+output:
+  # 是否保存标注视频
+  save_video: true
+  
+  # 是否保存数据文件（CSV 和 JSON）
+  save_data: true
+  
+  # 是否生成可视化图表
+  save_visualization: true
+  
+  # 输出目录
+  output_dir: output/
+
+# 可视化配置
+visualization:
+  # 生成的图表类型
+  charts:
+    - gender
+    - age
+    - orientation
+    - accessory
+    - bag
+    - upper
+    - lower
+    - overview
+  
+  # 图表分辨率 (DPI)
+  dpi: 300
+  
+  # 图表样式
+  style: whitegrid
+  
+  # 颜色主题
+  palette: husl
+
+# 显示配置
+display:
+  # 是否实时显示处理结果
+  show: false
+  
+  # 显示窗口标题
+  window_title: YOLO Attribute Tracking
+  
+  # 显示延迟（毫秒）
+  delay: 1
+
+# 性能配置
+performance:
+  # CPU 线程数
+  cpu_threads: 4
+  
+  # 是否使用 GPU
+  use_gpu: false
+  
+  # GPU 设备 ID
+  gpu_id: 0
+  
+  # GPU 显存分配（MB）
+  gpu_memory: 100
+
+# 日志配置
+logging:
+  # 日志级别 (DEBUG, INFO, WARNING, ERROR)
+  level: INFO
+  
+  # 是否保存日志文件
+  save_log: true
+  
+  # 日志文件路径
+  log_file: output/tracker.log
+
+# 属性识别配置
+attributes:
+  # 是否启用属性识别
+  enabled: true
+  
+  # 属性识别间隔（帧数）
+  interval: 10
+  
+  # 属性识别图像大小
+  image_size: 256
+
+# 视频处理配置
+video:
+  # 是否跳帧处理（每 N 帧处理一帧）
+  skip_frames: 0
+  
+  # 是否调整视频大小
+  resize: false
+  
+  # 调整后的宽度
+  resize_width: 1280
+  
+  # 调整后的高度
+  resize_height: 720
